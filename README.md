@@ -30,6 +30,7 @@ I used the last year (251 trading days) of Reddit's daily closing stock prices f
 
 ### 3ii - Analyze Data <a name="analyze-data"></a>
 
+![RDDT as of 04-04-2024](Images/RDDTasof20250404.png)
 
 ### 3iii - Preprocess Data for Model <a name="preprocess-data-for-model"></a>
 
