@@ -24,6 +24,7 @@ I used the last year (251 trading days) of Reddit's daily closing stock prices f
 
 ## 3 - Process Outline <a name="process-outline"></a>
 
+My process consisted of making teh data stationary/acceptable for a time series model. I ran into some issues with predictions due to the large price swings, so I also went througbh a few extra steps to determine the most ideal PDQ values for the most accurate prediciton based on RMSE.
 
 ### 3i - Initial Observations/Clean <a name="clean-data"></a>
 
@@ -51,10 +52,36 @@ The data needed to be stationary to run through an ARIMA model. I took the log o
 
 ### 3iv - Model Analysis/Prediction <a name="model-prediction/analysis"></a>
 
+#### Initial Predictions - P/D/Q 6-1-1
+
+![RDDT 6-1-1 Predictions](Images/(Images/RDDT611preds.png)
+
+Based on the analysis of ACF/PACF plots, I chose a 6-1-1- PDQ value for my first predictions. Intiially the ACF/PACF plots showed 0 for P and Q values so I differenced them to get to 6-1-1. The predictions came out flat compared to the actal test prices so I decided to run an auto-ARIMA to determine PDQ values that would give a more accurate prediction.
+
+The RMSE for these predictions was 0.356516
+
+#### Auto-ARIMA Predictions - P/D/Q 2-1-0
+
+![RDDT Auto Arima Predictions](Images/(Images/RDDTautopreds.png)
+
+Initially auto-ARIMA was returning 0-1-0 as the "best" PDQ values, which is not a model at all. When I reran after the 4/4/25 close, it specified that 2-1-0 was the most ideal.
+
+These predictions actually went the opposite direction of the actual stock price and returned a higher (worse) RMSE of 0.529366.
+
+#### Final Predictions - P/D/Q 2-2-0
+
+![RDDT 2-2-0 Predictions](Images/(Images/RDDT_220_preds.png)
+
+Seeing as the price varied widely and there wasn't enough extra data to train on, I decided to run a loop that went through every permutation of PDQ values up to 9-2-9 to try and find a more accurate set of predictions.
+
+The PDQ with the lowest RMSE of all 300 permutations was 2-2-0. The RMSE of these predicitons was 0.191540
+
 ## 4 - Next Steps <a name="next-steps"></a>
 
-
+I would like to see if there are any other exogenous variables I can include to come up with even more accurate predictions. I would like to see if there are ant other creative ways to account for the large swings in the stock price. Though unusual, it is not unheard of for a stock to move this much and I would like to dig more into the best ways to account for this type of movement.
 
 ## References <a name="references"></a>
 
-\\
+Yahoo Finance - https://finance.yahoo.com/
+
+Claude 3.7 Sonnet
