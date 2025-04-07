@@ -24,7 +24,7 @@ I used the last year (251 trading days) of Reddit's daily closing stock prices f
 
 ## 3 - Process Outline <a name="process-outline"></a>
 
-My process consisted of making teh data stationary/acceptable for a time series model. I ran into some issues with predictions due to the large price swings, so I also went througbh a few extra steps to determine the most ideal PDQ values for the most accurate prediciton based on RMSE.
+My process consisted of making the data stationary/acceptable for a time series model. I ran into some issues with predictions due to the large price swings, so I also went througbh a few extra steps to determine the most ideal PDQ values for the most accurate prediciton based on RMSE.
 
 ### 3i - Initial Observations/Clean <a name="clean-data"></a>
 
