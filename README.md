@@ -54,7 +54,7 @@ The data needed to be stationary to run through an ARIMA model. I took the log o
 
 #### Initial Predictions - P/D/Q 6-1-1
 
-![RDDT 6-1-1 Predictions](Images/(Images/RDDT611preds.png)
+![RDDT 6-1-1 Predictions](Images/RDDT611preds.png)
 
 Based on the analysis of ACF/PACF plots, I chose a 6-1-1- PDQ value for my first predictions. Intiially the ACF/PACF plots showed 0 for P and Q values so I differenced them to get to 6-1-1. The predictions came out flat compared to the actal test prices so I decided to run an auto-ARIMA to determine PDQ values that would give a more accurate prediction.
 
@@ -62,7 +62,7 @@ The RMSE for these predictions was 0.356516
 
 #### Auto-ARIMA Predictions - P/D/Q 2-1-0
 
-![RDDT Auto Arima Predictions](Images/(Images/RDDTautopreds.png)
+![RDDT Auto Arima Predictions](Images/RDDTautopreds.png)
 
 Initially auto-ARIMA was returning 0-1-0 as the "best" PDQ values, which is not a model at all. When I reran after the 4/4/25 close, it specified that 2-1-0 was the most ideal.
 
@@ -70,7 +70,7 @@ These predictions actually went the opposite direction of the actual stock price
 
 #### Final Predictions - P/D/Q 2-2-0
 
-![RDDT 2-2-0 Predictions](Images/(Images/RDDT_220_preds.png)
+![RDDT 2-2-0 Predictions](Images/RDDT_220_preds.png)
 
 Seeing as the price varied widely and there wasn't enough extra data to train on, I decided to run a loop that went through every permutation of PDQ values up to 9-2-9 to try and find a more accurate set of predictions.
 
